@@ -1,5 +1,5 @@
-# DocuMade
-DocuMade is a simple to use and leightweight documentation system using markup.
+# DocuMate
+DocuMate is a simple to use and leightweight documentation system using markup.
 
 Easily download the files, save them to your webserver and the system is ready to go.
 
@@ -12,7 +12,7 @@ You can upload your own logo files, develop own themes and change some behavior 
   3. Thats it, DocuMade is ready to use
 
 ## How to use
-### The configuarion
+### The configuration
 
 Once you've installed the files on your server, you'll se a file named ```config.php```. Make a backup of this file. Then open this file for editing.
 
@@ -38,6 +38,51 @@ In the file you'll see 7 variables:
 **$small_logo** is the small logo which appears on mobile devices.
 
 **$footer_html** is the custom HTML output, which you might want to place in the footer like imprints.
+
+
+### How to write the documentation
+If you look in the ```docs``` folder you'll see some ```.md``` files and some directories. DocuMate will use folders as headlines and place all the files below.
+
+If you want to add a new page to your docu, simply add a file with ```.md``` file extension.
+
+Order files while using number prefixes. Use Following syntax:
+```[Number]_[Name of the file].md
+01_This is a file.md```
+DocuMate will order the files and directories. Also it will remove all letters and numbers before the first ```_``` when displaying it.
+
+## Make your own Themes
+### Basic theme of your DocuMate
+Adding own themes is quite simple if you know CSS. Simply insert a new or copy one existing CSS file. If you copy an existing file, you'll get all classes you can edit.
+
+After this, you have to change the ```$theme``` variable in the ```config.php```. Use the name of your new theme file without the ```.css```
+
+### Markup theme
+You can also change the design of the markup content. Copy the file ```markup_light.css``` in the themes folder and change the CSS properties inside. Be sure, that you don't manipulate the classnames! After this, add the name of your new markup file to ```config.php```.
+
+
+
+# Todo:
+  * Online file editing
+  * Online file adding
+  * Online file removing
+
+
+# Thanks for using!
+Don't hesitate to send me some lines: lars@lehmann.link
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
