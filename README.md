@@ -66,6 +66,9 @@ You can also change the design of the markup content. Copy the file ```markup_li
   * Online file adding
   * Online file removing
 
+#Credits:
+For the markdown translation I use the awesome php library of Michelf: https://michelf.ca/projects/php-markdown/
+
 
 # Thanks for using!
 Don't hesitate to send me some lines: lars@lehmann.link
