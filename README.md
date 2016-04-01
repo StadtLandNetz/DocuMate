@@ -46,8 +46,10 @@ If you look in the ```docs``` folder you'll see some ```.md``` files and some di
 If you want to add a new page to your docu, simply add a file with ```.md``` file extension.
 
 Order files while using number prefixes. Use Following syntax:
+
 ```[Number]_[Name of the file].md
 01_This is a file.md```
+
 DocuMate will order the files and directories. Also it will remove all letters and numbers before the first ```_``` when displaying it.
 
 ## Make your own Themes
