@@ -1,0 +1,282 @@
+/*
+File: style.css
+Author: Lars Lehmann
+Desc: All the basic format options.
+      Can be overwritten by a theme css. 
+      Look in the themes folder and change the PHP variable in config.php.
+*/
+
+
+
+body{
+    margin: 0;
+    display: block;     
+}
+
+h1, h2, h3, h4, h5, p, a{
+    padding: 0;
+    margin: 0;
+}
+
+
+a:hover{
+    text-decoration: underline;
+}
+
+
+
+.wrapper{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.mobile_menu{
+    display: none;
+}
+
+/* ------------ TOPBAR -----------*/
+.topbar{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    z-index: 2;
+}
+
+ .topbar div,  .topbar h1{
+    float: left;
+    margin: 0;
+}
+
+.topbar h1{
+}
+
+.main_logo{ 
+    height: 60px;
+    width: 250px;
+    margin-left: 10px !important;
+    margin-right: 50px !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.small_logo{ 
+    height: 40px;
+    width: 40px;
+    margin-left: 10px !important;
+    margin-right: 20px !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    margin-top: 10px !important;
+    display: none;
+}
+
+/* ------------ INNER -----------*/
+.inner{
+    width: 100%;
+    height: 100%;
+    padding-top: 60px;
+}
+
+/* ------------ LEFTBAR -----------*/
+.leftbar{
+    height: calc(100% - 150px);
+    width: 299px;
+    padding: 20px;
+    position: fixed;
+    margin-top: 60px;
+    z-index: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.menu .menuitem {
+    font-weight: 100;
+}
+
+.menu {
+    margin-left: 7px;
+    margin-top: 5px;
+    font-weight: 600;
+}
+.menu .menu .menu {
+    font-size: 12px;
+}
+
+.menuitem {
+    margin-left: 5px;
+    font-weight: 600;
+    padding: 3px;
+    cursor: pointer;
+}
+.menuitem:hover {
+}
+.menuitem::before{
+   /* Content: "⚊ ";*/
+}
+ .selected {
+    font-weight: 600;
+    padding-left: 6px;
+}
+.menu a {
+    text-decoration: none;
+}
+
+/* ------------ RIGHTBAR -----------*/
+.rightbar{
+    height: calc(100% - 150px);
+    width: calc(100% - 380px);
+    position: fixed;
+    left: 340px;
+    top: 60px;
+    z-index: 1;
+    padding: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+/* ------------ FOOTER -----------*/
+.footer {
+    width: 100%;
+    height: 20px;
+    position: fixed;
+    top: calc(100% - 50px);
+    padding: 15px;
+    z-index: 3;
+}
+
+/* ----------------------------------- */
+/* ----- Styles smaller Displays ----- */
+@media screen and (max-width: 1025px) {
+    .rightbar {
+        width: calc(100% - 380px) !important;
+        overflow-y: auto !important;
+        overflow-x: auto !important;
+    }   
+    
+}
+@media screen and (max-width: 769px) {
+    .leftbar{
+        width: 199px !important;
+    }
+    .rightbar {
+        width: calc(100% - 240px) !important;
+        left: 240px;
+    } 
+}
+
+
+
+@media screen and (max-width: 450px) {
+
+    .main_logo{ 
+        display: none;
+    }
+    .small_logo{ 
+        display: block;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    
+    .leftbar{
+        left: -240px;
+        transition: all 0.5s ease;
+    }
+    .rightbar {
+        left: 0;
+        width: 100% !important;
+        transition: all 0.5s ease;
+    }
+    
+    .leftbar.open{
+        left: 0px;
+    }
+    .rightbar.open{
+        left: 240px;
+        width: calc(100% - 240px) !important;
+    }
+    
+    
+    .mobile_menu{
+        display: block;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #fff;
+        z-index: 4;
+        float: left;
+        margin-top: 8px !important;
+        margin-left: 8px !important;
+        border-radius: 5px;
+    }
+    .mobile_menu:hover{
+        background: #F9F9F9;
+        border: 1px solid #DAE0E7;
+    }
+    .mobile_menu:active, .mobile_menu:focus{
+        background: #F9F9F9;
+        border: 1px solid #DAE0E7;
+        box-shadow: 0 0 5px #DADADA inset;
+    }
+    
+    
+    .hamburger-box {    
+        position: relative;
+        width: 30px;
+        height: 25px;
+        margin: 5px !important;
+    }
+    .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+        position: absolute;
+        width: 30px;
+        height: 4px;
+        border-radius: 4px;
+        background-color: #616161;
+    }
+    .hamburger-inner {
+        top: 50%;
+        display: block;
+        margin-top: -2px;
+    }
+
+
+    .hamburger-inner:before {
+        top: -10px;
+    }
+
+    .hamburger-inner:after {
+        bottom: -10px;
+    }
+    .hamburger-inner:after, .hamburger-inner:before {
+        display: block;
+        content: '';
+    }
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

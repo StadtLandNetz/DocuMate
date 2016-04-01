@@ -1,0 +1,99 @@
+body{
+    font-size: 14px;
+    color: #616161;
+    font-family: 'Open Sans', 'Helvetica Neue', 'Hiragino Sans GB', 'LiHei Pro', Arial, sans-serif;
+    background: #F9F9F9;    
+}
+
+h1, h2, h3, h4, h5, p, a{
+}
+a{
+    text-decoration: none;
+    color: #616161;
+}
+
+
+.wrapper{
+}
+
+/* ------------ TOPBAR -----------*/
+.topbar{
+    box-shadow: 0 0 5px #D4D4D4;
+    background: #fff;
+    border-bottom: 1px solid #DAE0E7;
+}
+
+.topbar h1{
+    line-height: 60px;
+}
+
+.main_logo{ 
+}
+
+/* ------------ LEFTBAR -----------*/
+.leftbar{
+    background: #F9F9F9;
+    border-right: 1px solid #DAE0E7;
+}
+
+.menu .menuitem {
+    font-size: 14px;
+}
+
+.menu {
+}
+.menu .menu .menu {
+    font-size: 12px;
+}
+
+.menuitem {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 3px;
+    cursor: pointer;
+}
+.menuitem:hover {
+    background: #f3f3f3;
+    color: #333;
+}
+.menuitem::before{
+   /* Content: "⚊ ";*/
+}
+ .selected {
+    background: #4C94E0;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* ------------ RIGHTBAR -----------*/
+.rightbar{
+    background: #fff;
+    border-right: 1px solid #DAE0E7;
+    overflow-x: scroll; /*overwrites the custom style, where hor.scrolling is deactivated */
+    width: calc(80% - 380px); /*adds a space on right site of the content.*/
+}
+
+
+/* ------------ FOOTER -----------*/
+.footer {
+    background: #F9F9F9;
+    box-shadow: 0 0 5px #D4D4D4;
+    border-top: 1px solid #DAE0E7;
+}
+
+
+
+/* ---------- CONTENT ELEMENTS ----------- */
+hr{
+    background-color: #DAE0E7; 
+    color: #DAE0E7; 
+    border: 0;
+    height: 1px;
+    background-image: none;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+
+
+
