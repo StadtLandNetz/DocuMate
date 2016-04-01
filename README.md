@@ -6,6 +6,8 @@ Easily download the files, save them to your webserver and the system is ready t
 You can upload your own logo files, develop own themes and change some behavior of the app.
 
 
+![BILD](http://doku.s-via.de/ressources/dokumate%20screen.png)
+
 ## Installation
   1. Download the ZIP file
   2. Upload them to your webserver
