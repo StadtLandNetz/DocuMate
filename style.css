@@ -148,6 +148,26 @@ a:hover{
     z-index: 3;
 }
 
+
+.edit_btn{
+    display: block;
+    padding: 9px;
+    border: 1px solid #CCCCCC;
+    margin: 11px !important;
+    border-radius: 5px;
+    margin-left: 20px !important;
+    background-color: #efefef;
+}
+
+
+.edit_btn:hover{
+    background: #F9F9F9;
+}
+.edit_btn:active{
+    box-shadow: 0 0 10px #D2D2D2 inset;
+}
+
+
 /* ----------------------------------- */
 /* ----- Styles smaller Displays ----- */
 @media screen and (max-width: 1025px) {
@@ -260,23 +280,3 @@ a:hover{
     
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
