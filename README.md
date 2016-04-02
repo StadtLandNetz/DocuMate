@@ -74,7 +74,6 @@ You can also change the design of the markup content. Copy the file ```markup_li
 
 
 # Todo:
-  * Online file editing
   * Online file adding
   * Online file removing
 
