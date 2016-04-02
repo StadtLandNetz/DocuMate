@@ -12,10 +12,10 @@ $documentation_folder = "docs";
 $documentation_title = "VIA - Dokumentation"; 
 
 //the name of the theme/style you want for the entire app. Check the themes folder. Enter here filename without '.css'. You can create new styles by copying an old one.
-$theme = 'theme_light'; 
+$theme = 'theme_dark'; 
 
 //the name of the theme/style you want for the markup. Check the themes folder. Enter here filename without '.css'. You can create new styles by copying an old one.
-$markup_theme = 'markup_light'; 
+$markup_theme = 'markup_dark'; 
 
 //the path to your logo file, which will be placed in the header
 //The size of this image is 60x240 px
@@ -30,5 +30,8 @@ $footer_html = "<p>Here you can insert some <b>own</b> HTML like <a href=\"http:
 
 //The page what will be shown when the root page is loaded, this is the indexpage. WITHOUT THE .md FILE EXTENSION!
 $start_page = "01_Home";
+
+//Indicates if the files can be edited using the integrated markup editor
+$editable = true;
 
 ?>
