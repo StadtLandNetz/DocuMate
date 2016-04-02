@@ -1,0 +1,103 @@
+body{
+    font-size: 14px;
+    color: #EFEFEF !important;
+    font-family: 'Open Sans', 'Helvetica Neue', 'Hiragino Sans GB', 'LiHei Pro', Arial, sans-serif;
+    background-color: #3B3C3E; 
+}
+
+h1, h2, h3, h4, h5, p, a{
+}
+a{
+    text-decoration: none;
+    color: #616161;
+}
+
+
+.wrapper{
+}
+
+/* ------------ TOPBAR -----------*/
+.topbar{
+    box-shadow: 0 0 0px #000000;
+    background: #3B3C3E;
+    border-bottom: 1px solid #565D65;
+}
+
+.topbar h1{
+    line-height: 60px;
+}
+
+.main_logo{ 
+}
+.menu .menuitem {
+    font-size: 14px;
+    color: #efefef;
+}
+
+/* ------------ LEFTBAR -----------*/
+.leftbar{
+    background: #3B3C3E;
+    border-right: 1px solid #565D65;
+}
+
+.menu .menuitem {
+    font-size: 14px;
+}
+
+.menu {
+}
+.menu .menu .menu {
+    font-size: 12px;
+}
+
+.menuitem {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 3px;
+    cursor: pointer;
+}
+.menuitem:hover {
+    background: #f3f3f3;
+    color: #333;
+}
+.menuitem::before{
+   /* Content: "⚊ ";*/
+}
+ .selected {
+    background: #4C94E0;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* ------------ RIGHTBAR -----------*/
+.rightbar{
+    background: #313235;
+    border-right: 1px solid #565D65;
+    overflow-x: scroll;
+    width: calc(80% - 380px);
+}
+
+
+/* ------------ FOOTER -----------*/
+.footer {
+    background: #3B3C3E;
+    box-shadow: 0 0 0px #D4D4D4;
+    border-top: 1px solid #565D65;
+}
+
+
+
+/* ---------- CONTENT ELEMENTS ----------- */
+hr{
+    background-color: #565D65;
+    color: #DAE0E7;
+    border: 0;
+    height: 1px;
+    background-image: none;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+
+
+
