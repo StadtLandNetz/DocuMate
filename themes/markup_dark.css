@@ -1,0 +1,118 @@
+/*
+File:   Markup Light
+Author: Lars Lehmann
+Desc:   The is the basic file for formatting the markup-area and its contents.
+        Copy this file, if you want to make your own style.
+        All the classes in this file are required.
+        Make sure to use the exactly syntax of the class kettles.
+*/
+
+
+/* ----- TEXTS ----- */
+.markup h1, .markup h2, .markup h3, .markup h4, .markup h5, .markup h6{
+    border-bottom: 0px solid silver;
+}
+body{
+    font-size: 14px;
+    color: #616161;
+    font-family: 'Open Sans', 'Helvetica Neue', 'Hiragino Sans GB', 'LiHei Pro', Arial, sans-serif;
+}
+
+.markup h2 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+.markup h3 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.markup h4 {
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+.markup h5 {
+    margin-top: 8px;
+    margin-bottom: 2px;
+    font-size: 14px;
+}
+.markup p {
+    margin-bottom: 10px;
+}
+
+
+/* ----- CODE ----- */
+.markup pre {
+    background: #EAEAEA;
+    color: #000000;
+    padding: 10px;
+    margin-left: 25px;
+    transition: all 1s ease;
+}
+.markup pre:hover {
+    background: #D4D4D4;
+}
+.markup p code {
+    background: #EAEAEA;
+    color: #000000;
+    border-radius: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/* ----- QUOTES ----- */
+
+.markup blockquote {
+    background: #4C94E0;
+    color: #fff;
+    padding: 10px;
+    font-style: italic;
+    font-weight: 500;
+    transition: all 1s ease;
+}
+.markup blockquote:hover {
+    background: #3E79B7;
+}
+.markup blockquote:before {
+    content: '"';
+    font-size: 46px;
+    float: left;
+    margin-right: 15px;
+    margin-top: -15px;
+}
+.markup blockquote:after {
+    content: '"';
+    font-size: 46px;
+    float: right;
+    margin-left: 15px;
+    margin-top: -30px;
+}
+.markup blockquote p {
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+
+/* ----- TABLES ----- */
+.markup table {
+    border-collapse: collapse;
+    color: #313235;
+}
+.markup table, .markup th, .markup td {
+    border: 1px solid #DAE0E7;
+    padding: 5px;
+}
+.markup tr{
+    transition: all 0.5s ease;
+    background-color: #fff;
+}
+
+.markup th{
+    background: #EAEAEA;
+}
+
+.markup tr:hover, .markup tr:nth-child(even):hover {
+    background-color: #E7ECF5
+}
+.markup tr:nth-child(even) {
+    background-color: #f9f9f9
+}
