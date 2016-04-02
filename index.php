@@ -69,6 +69,9 @@ else{
                 <h1>
                 <?php echo $documentation_title; ?>
                 </h1>
+                <?php if ($editable == true){
+                echo '<a href="editor/?site=' . $site . '"><div class="edit_btn" style="display:block;">Edit this file</div></a>';
+                } ?>
             </div>
 
             <div id="leftbar" class="leftbar">
@@ -90,7 +93,7 @@ else{
                     foreach($head1 as $elem){
                         if ($elem <> $documentation_folder){
                             $elem = str_replace (".md", "", $elem);
-                            echo ' 〉 ' . $elem;
+                            echo ' 〉' . $elem;
                         } else{
                             echo 'Home';
                         }
@@ -115,12 +118,3 @@ else{
     </body>
 
 </html>
-
-
-
-
-
-
-
-
-
