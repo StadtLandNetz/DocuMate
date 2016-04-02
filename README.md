@@ -80,6 +80,7 @@ You can also change the design of the markup content. Copy the file ```markup_li
 
 #Credits:
 For the markdown translation I use the awesome php library of Michelf: https://michelf.ca/projects/php-markdown/
+The editor is made by this awesome guy: https://github.com/jbt/markdown-editor
 
 
 # Thanks for using!
