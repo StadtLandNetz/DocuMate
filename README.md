@@ -5,6 +5,10 @@ Easily download the files, save them to your webserver and the system is ready t
 
 You can upload your own logo files, develop own themes and change some behavior of the app.
 
+NEW since V2:
+* Online markupeditor: easily edit your markup files online using the stunning editor.
+* New dark theme added (looks amazing)
+
 
 ![BILD](http://doku.s-via.de/ressources/dokumate%20screen.png)
 
@@ -26,6 +30,7 @@ In the file you'll see 7 variables:
   * $topbar_logo = "ressources/main_logo.png"; 
   * $small_logo = "ressources/small_logo.png"; 
   * $footer_html = "some HTML";
+  * $editable = true;
 
 **$documentation_folder** sets the name of the subdirectory where the markup files are saved. You don't need to change this, if you save the markup files in the existing "docs" folder.
 
@@ -41,6 +46,7 @@ In the file you'll see 7 variables:
 
 **$footer_html** is the custom HTML output, which you might want to place in the footer like imprints.
 
+**$editable = true;** indicates if the files can be edited using the integrated markup editor
 
 ### How to write the documentation
 If you look in the ```docs``` folder you'll see some ```.md``` files and some directories. DocuMate will use folders as headlines and place all the files below.
