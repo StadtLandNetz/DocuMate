@@ -114,7 +114,9 @@ Desc:   The is the basic file for formatting the markup-area and its contents.
 
 
 
-
+.markup img {
+    width: 100%;
+}
 
 
 
