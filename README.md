@@ -5,6 +5,8 @@ Easily download the files, save them to your webserver and the system is ready t
 
 You can upload your own logo files, develop own themes and change some behavior of the app.
 
+Checkout the demo: http://documate.lehmann.link/
+
 NEW since V2:
 * Online markupeditor: easily edit your markup files online using the stunning editor.
 * New dark theme added (looks amazing)
