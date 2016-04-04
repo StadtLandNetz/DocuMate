@@ -1,14 +1,14 @@
 # DocuMate
-DocuMate is a simple to use and leightweight documentation system using markup.
+DocuMate is a simple to use and leightweight documentation system using markdown.
 
 Easily download the files, save them to your webserver and the system is ready to go.
 
-You can upload your own logo files, develop own themes and change some behavior of the app.
+You can upload your own logo files, **develop own themes** and change some behavior of the app.
 
 Checkout the demo: http://documate.lehmann.link/
 
-NEW since V2:
-* Online markupeditor: easily edit your markup files online using the stunning editor.
+**NEW since V2:**
+* Online markdowneditor: easily edit your markdown files online using the stunning editor.
 * New dark theme added (looks amazing)
 
 
@@ -34,13 +34,13 @@ In the file you'll see 7 variables:
   * $footer_html = "some HTML";
   * $editable = true;
 
-**$documentation_folder** sets the name of the subdirectory where the markup files are saved. You don't need to change this, if you save the markup files in the existing "docs" folder.
+**$documentation_folder** sets the name of the subdirectory where the markdown files are saved. You don't need to change this, if you save the markdown files in the existing "docs" folder.
 
 **$documentation_title** is the name or the title of your documentation.
 
 **$theme** is the name of the used theme, located in the themes folder. You can make your own theme or use an existing one. Be sure, that the theme really exists. Use the name of the CSS-file but without the '.css'.
 
-**$markup_theme** is the same like the theme variable but for the markup section. If you want to change the style of the html output of you markup files, create your own CSS file or edit the existing one.
+**$markup_theme** is the same like the theme variable but for the markdown section. If you want to change the style of the html output of you markdown files, create your own CSS file or edit the existing one.
 
 **$topbar_logo** is the logo which appears in the header.
 
@@ -48,7 +48,7 @@ In the file you'll see 7 variables:
 
 **$footer_html** is the custom HTML output, which you might want to place in the footer like imprints.
 
-**$editable = true;** indicates if the files can be edited using the integrated markup editor
+**$editable = true;** indicates if the files can be edited using the integrated markdown editor
 
 ### How to write the documentation
 If you look in the ```docs``` folder you'll see some ```.md``` files and some directories. DocuMate will use folders as headlines and place all the files below.
@@ -71,7 +71,7 @@ Adding own themes is quite simple if you know CSS. Simply insert a new or copy o
 After this, you have to change the ```$theme``` variable in the ```config.php```. Use the name of your new theme file without the ```.css```
 
 ### Markup theme
-You can also change the design of the markup content. Copy the file ```markup_light.css``` in the themes folder and change the CSS properties inside. Be sure, that you don't manipulate the classnames! After this, add the name of your new markup file to ```config.php```.
+You can also change the design of the markdown content. Copy the file ```markup_light.css``` in the themes folder and change the CSS properties inside. Be sure, that you don't manipulate the classnames! After this, add the name of your new markdown file to ```config.php```.
 
 
 
