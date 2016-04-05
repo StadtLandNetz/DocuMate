@@ -1,4 +1,4 @@
-# DocuMate
+# DocuMate (V2)
 DocuMate is a simple to use and leightweight documentation system using markdown.
 
 Easily download the files, save them to your webserver and the system is ready to go.
@@ -25,6 +25,7 @@ Checkout the demo: http://documate.lehmann.link/
 Once you've installed the files on your server, you'll se a file named ```config.php```. Make a backup of this file. Then open this file for editing.
 
 In the file you'll see 7 variables:
+
   * $documentation_folder = "docs"; 
   * $documentation_title = "DocMade example"; 
   * $theme = 'theme_light'; 
