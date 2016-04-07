@@ -47,6 +47,50 @@ function listFolderFiles($directory){
     echo '</div>';
 }
 
+function get_search_results($directory, $search){
+    $C = 0;
+    
+    $ffs = scandir($directory);
+    //echo '<div class="menu">';
+    foreach($ffs as $ff){
+        $C = $C + 1;
+        if($ff != '.' && $ff != '..'){
+
+            if(is_dir($directory.'/'.$ff)) {
+                //Ordner nicht mit auflisten, aber durchsuchen
+                
+                get_search_results($directory.'/'.$ff, $search);
+            } else {
+                //Seiteninhalt ermitteln
+                $file_content = file_get_contents($directory.'/'.$ff, true);
+                $strp = stripos ($file_content, $search);
+                
+                if ( $strp <> false){
+                    
+                    $ff2 = str_replace (".md", "", $ff);
+                    $pfad = str_replace("/", ' 〉', $directory) . ' 〉' . str_replace (".md", "", $ff);
+                    $pos = strrpos($ff, "_", 0);
+                    
+                    $from = $strp - 50;
+                    $to = 100;
+                    $excerpt = '<p><i>[...]' . substr($file_content, $from, $to) . '[...]</i></p>';
+                    $excerpt = str_ireplace($search, '<b><u>' . $search . '</b></u>', $excerpt);
+                    
+                    
+                        echo '<a href="?site='.$directory.'/'.$ff.'&focus=mnu'. $C . $ff2 .'"><div class="search_result">
+                        <h4>' . $pfad . '</h4>
+                        ' . $excerpt . '
+                        </div></a>
+                        <hr>';
+                    
+                }
+                
+            }
+        }
+    }
+    //echo '</div>';
+}
+
 
 
 

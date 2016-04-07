@@ -6,20 +6,33 @@ require_once 'config.php';
 
 
 //Get URL Parameter for loading the right document
-if(isset($_GET["site"]) <> ''){
-    $site = $_GET['site'];
-    $focus = $_GET['focus'];
-}
-else{
-    $site = $documentation_folder. '/' . $start_page . '.md';
-    $focus = $documentation_folder . 'mnu' . $start_page;
+$search = '';
+$site = '';
+$focus = '';
+
+if(isset($_GET["search"]) <> ''){
+    //Suchfunktion wurde verwendet
+    $search = $_GET['search'];
+    if ($search ==''){
+        $search = 'no value entered';
+    }
+
+}else{
+    // Normaler Seitenaufruf ohne suche
+    if(isset($_GET["site"]) <> ''){
+        $site = $_GET['site'];
+        $focus = $_GET['focus'];
+    }else{
+        $site = $documentation_folder. '/' . $start_page . '.md';
+        $focus = $documentation_folder . 'mnu' . $start_page;
+    }
 }
 
 ?>
 
 
-<!DOCTYPE html>
-<html lang="de">
+    <!DOCTYPE html>
+    <html lang="de">
 
     <head>
         <meta charset="utf-8">
@@ -30,21 +43,21 @@ else{
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" type="text/css" href="themes/<?php echo $theme; ?>.css">
         <link rel="stylesheet" type="text/css" href="themes/<?php echo $markup_theme; ?>.css">
-        
+
         <script>
             //scrolls to the position where the clicked menu element is
-            window.onload = function scrollinto(){
+            window.onload = function scrollinto() {
                 var element = document.getElementById('<?php echo $focus;?>');
                 element.scrollIntoView(true);
                 element.classList.add('selected');
             }
-            
+
             //toggles the menu on mobile devices
             function toggle_mobile_menu() {
                 var left_ = document.getElementById('leftbar');
                 var right_ = document.getElementById('rightbar');
-                
-                if (left_.className == 'leftbar'){
+
+                if (left_.className == 'leftbar') {
                     left_.className = 'leftbar open';
                     right_.className = 'rightbar open';
                 } else {
@@ -56,13 +69,13 @@ else{
     </head>
 
     <body>
-        
+
         <div class="wrapper">
             <div class="topbar">
                 <div class="mobile_menu" onclick="toggle_mobile_menu()">
-                      <div class="hamburger-box">
-                            <div class="hamburger-inner"></div>
-                      </div>
+                    <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                    </div>
                 </div>
                 <div class="main_logo" style="background-image:URL(<?php echo $topbar_logo; ?>);"></div>
                 <div class="small_logo" style="background-image:URL(<?php echo $small_logo; ?>);"></div>
@@ -70,26 +83,33 @@ else{
                 <?php echo $documentation_title; ?>
                 </h1>
                 <?php if ($editable == true){
-                echo '<a href="editor/?site=' . $site . '"><div class="edit_btn" style="display:block;">Edit this file</div></a>';
-                } ?>
+                    if ($search ==''){
+                        echo '<a href="editor/?site=' . $site . '"><div class="edit_btn" style="display:block;float: right;">Edit this file</div></a>';
+                    }
+                }?>
             </div>
 
             <div id="leftbar" class="leftbar">
-                <h2 id="start_mnu">Hauptmenü</h2>
+                <form>
+                    <input class="searchbox" type="textfield" placeholder="Search this docs" value="<?php echo $search; ?>" name="search"><input class="btn_search" type="submit" value="Search">
+                </form>
+
                 <hr>
                 <?php 
                 //Load Menu
                 listFolderFiles($documentation_folder); ?>
                 <hr>
-                
+
             </div>
 
             <div id="rightbar" class="rightbar">
                 <?php 
-                    //Load Content of the current page
+                use \Michelf\MarkdownExtra, \Michelf\SmartyPants;
+                if ($search == ''){
+                    //Keine suche, Seiteninhalt laden
                     $file_content = file_get_contents($site, true);
                     $head1 = split("/", $site);
-                    echo '<h2>';
+                    echo '<h2 style="margin-bottom: 16px;">';
                     foreach($head1 as $elem){
                         if ($elem <> $documentation_folder){
                             $elem = str_replace (".md", "", $elem);
@@ -103,10 +123,16 @@ else{
                     $erg = $file_content . '<hr>';
 
                     //Translate Markup to HTML
-                    use \Michelf\MarkdownExtra, \Michelf\SmartyPants;
                     $erg = MarkdownExtra::defaultTransform($erg); 
 
                     echo $erg . "</div>";
+                    
+                }else{
+                    
+                    //Suchfunktion benutzt, kein Seiteninhalt laden
+                    echo '<h2 style="margin-bottom: 16px;">You\'re searching for <i>"' . $search . '"</i></h2><hr>';
+                    get_search_results($documentation_folder, $search);
+                }
                 
                 ?>
             </div>
@@ -117,4 +143,4 @@ else{
 
     </body>
 
-</html>
+    </html>

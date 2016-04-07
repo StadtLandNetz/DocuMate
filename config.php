@@ -1,21 +1,21 @@
 <?php
 #   File: config.php
 #   Author: Lars Lehmann
-#   Desc: Here xou can find all the basic options for you documentation
+#   Desc: Here xou can find all the basic options for your documentation
 #         Please make a backup before editing this file.
-#         You have to set all the variables to a value. Don't delete one or leave one empty.
+#         You have to set all the variables to a value. Don't delete one or leave them empty.
 
 //The name of the folder, where the .md-files are saved 
 $documentation_folder = "docs"; 
 
 //The Title of your documentation
-$documentation_title = "VIA - Dokumentation"; 
+$documentation_title = "DocuMate - documentation made easy"; 
 
 //the name of the theme/style you want for the entire app. Check the themes folder. Enter here filename without '.css'. You can create new styles by copying an old one.
-$theme = 'theme_dark'; 
+$theme = 'theme_light'; 
 
 //the name of the theme/style you want for the markup. Check the themes folder. Enter here filename without '.css'. You can create new styles by copying an old one.
-$markup_theme = 'markup_dark'; 
+$markup_theme = 'markup_light'; 
 
 //the path to your logo file, which will be placed in the header
 //The size of this image is 60x240 px

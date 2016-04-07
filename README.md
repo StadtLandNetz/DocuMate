@@ -7,6 +7,10 @@ You can upload your own logo files, **develop own themes** and change some behav
 
 Checkout the demo: http://documate.lehmann.link/
 
+**NEW since V3:**
+* Added search-function
+* Updated Themes
+
 **NEW since V2:**
 * Online markdowneditor: easily edit your markdown files online using the stunning editor.
 * New dark theme added (looks amazing)

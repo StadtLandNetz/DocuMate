@@ -120,8 +120,12 @@ a:hover{
     font-weight: 600;
     padding-left: 6px;
 }
+
+a {
+    text-decoration: none !important;
+}
 .menu a {
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 /* ------------ RIGHTBAR -----------*/
@@ -167,6 +171,33 @@ a:hover{
     box-shadow: 0 0 10px #D2D2D2 inset;
 }
 
+
+
+/* ------------ SEARCH -----------*/
+.searchbox{
+    padding: 5px;
+    width: 213px;
+}
+
+.btn_search{    
+    margin-left: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.btn_search:hover {
+}
+.btn_search:active {
+    
+}
+
+.search_result {
+    margin: -7px -20px;
+    padding: 20px;
+}
+
+.search_result:hover {
+}
 
 /* ----------------------------------- */
 /* ----- Styles smaller Displays ----- */
@@ -275,8 +306,5 @@ a:hover{
         display: block;
         content: '';
     }
-    
-    
-    
     
 }
