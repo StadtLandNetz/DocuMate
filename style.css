@@ -175,8 +175,8 @@ a {
 
 /* ------------ SEARCH -----------*/
 .searchbox{
-    padding: 5px;
-    width: 213px;
+    padding: 5px;    
+    width: calc(100% - 85px);
 }
 
 .btn_search{    
