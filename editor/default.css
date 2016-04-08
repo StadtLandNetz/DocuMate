@@ -3,21 +3,44 @@
     color: #FFFFFF;
     position: absolute;
     top: 5px;
-    right: 5px;
+    right: 30px;
     padding: 10px;
     background: linear-gradient(#5DD09F, #4EA982);
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;
     outline: none;
+    font-size: 14px;
+    font-family: arial;
+}
+.cancel_btn{
+    border: 0px solid #FFFFFF;
+    color: #FFFFFF;
+    position: absolute;
+    top: 5px;
+    right: 110px;
+    padding: 10px;
+    background: linear-gradient(#C56060, #A94E4E);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    z-index: 1;
+    font-size: 14px;
+    font-family: arial;
 }
 
 .submit_btn:hover{
-    box-shadow: 0 0 5px #A5A5A5;
-    background: linear-gradient(#6DEFB7, #62D2A2);
+    box-shadow: 0 0 10px #B7B7B7;
+    background: linear-gradient(#57BB90, #57BB90);
 }
-.submit_btn:active{
-    box-shadow: 0 0 5px #A5A5A5 inset;
+ .cancel_btn:hover{
+    box-shadow: 0 0 10px #B7B7B7;
+    background: linear-gradient(#CA6060, #CA6060)
+}
+
+.submit_btn:active, .cancel_btn:active{
+    box-shadow: 0 0 5px #757575 inset;
 }
 
 .CodeMirror pre {
@@ -25,15 +48,15 @@
 }
 
 #in {
-    position: fixed;
+position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
-    width: 50%;
+    width: 100%;
     height: auto;
     overflow: auto;
     font-size: 12px;
-    box-shadow: -10px 2px 6px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 25px #B5B5B5;
 }
 
 .CodeMirror {
