@@ -1,0 +1,6 @@
+{
+  "name": "DocuMate - Docimentation made easy",
+  "tagline": "documentation, software, online, generator, themplates, php, easy, use, leightweight",
+  "body": "# Welcome to DocuMate.\r\n## What is that?\r\nDM is an easy to use and leightweight documentation-generator for your software, book, project, company or group.\r\n\r\n## How does it works?\r\nYou simply need a webserver with PHP. No database. Yust download all files, upload them to your server and you are ready to takeoff.\r\n\r\n## What are the features?\r\nYou can add, edit and remove files and folders. Files stored in folders are grouped fo a better overwiew.\r\n\r\nWith the markdown-abilities you can format your texts, tables and images.\r\n\r\n\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
