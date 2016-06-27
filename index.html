@@ -1,51 +1,179 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <title>DocuMate - Docimentation made easy by VanDerLars</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>DocuMate - Docimentation made easy by VanDerLars</title>
   </head>
+
   <body>
-    <section class="page-header">
-      <h1 class="project-name">DocuMate - Docimentation made easy</h1>
-      <h2 class="project-tagline">documentation, software, online, generator, themplates, php, easy, use, leightweight</h2>
-      <a href="https://github.com/VanDerLars/DocuMate" class="btn">View on GitHub</a>
-      <a href="https://github.com/VanDerLars/DocuMate/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/VanDerLars/DocuMate/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+    <header>
+      <div class="inner">
+        <h1>DocuMate - Docimentation made easy</h1>
+        <h2>A leightweight and easy to use documentation CMS for your software, project, company, group or product.</h2>
+        <a href="https://github.com/VanDerLars/DocuMate" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
 
-    <section class="main-content">
-      <h1>
-<a id="welcome-to-documate" class="anchor" href="#welcome-to-documate" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to DocuMate.</h1>
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="documate-v2" class="anchor" href="#documate-v2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DocuMate (V2)</h1>
+
+<p>DocuMate is a simple to use and leightweight documentation system using markdown.</p>
+
+<p>Easily download the files, save them to your webserver and the system is ready to go.</p>
+
+<p>You can upload your own logo files, <strong>develop own themes</strong> and change some behavior of the app.</p>
+
+<p>Checkout the demo: <a href="http://documate.lehmann.link/">http://documate.lehmann.link/</a></p>
+
+<p><strong>NEW since V3:</strong></p>
+
+<ul>
+<li>Added search-function</li>
+<li>Updated Themes</li>
+</ul>
+
+<p><strong>NEW since V2:</strong></p>
+
+<ul>
+<li>Online markdowneditor: easily edit your markdown files online using the stunning editor.</li>
+<li>New dark theme added (looks amazing)</li>
+</ul>
+
+<p><strong>FEATURES:</strong></p>
+
+<ul>
+<li>Mobile-support</li>
+<li>Use markdown-language for text-styling</li>
+<li>Full file- and directory-based CMS</li>
+<li>No database required</li>
+<li>Runs on every webserver with PHP 5+</li>
+<li>Custom themes! Style it by your own.</li>
+<li>Lightning fast!</li>
+</ul>
+
+<p><img src="http://doku.s-via.de/ressources/dokumate%20screen.png" alt="BILD"></p>
 
 <h2>
-<a id="what-is-that" class="anchor" href="#what-is-that" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What is that?</h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
 
-<p>DM is an easy to use and leightweight documentation-generator for your software, book, project, company or group.</p>
+<ol>
+<li>Download the ZIP file</li>
+<li>Upload them to your webserver</li>
+<li>Thats it, DocuMade is ready to use</li>
+</ol>
 
 <h2>
-<a id="how-does-it-works" class="anchor" href="#how-does-it-works" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How does it works?</h2>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use</h2>
 
-<p>You simply need a webserver with PHP. No database. Yust download all files, upload them to your server and you are ready to takeoff.</p>
+<h3>
+<a id="the-configuration" class="anchor" href="#the-configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The configuration</h3>
+
+<p>Once you've installed the files on your server, you'll se a file named <code>config.php</code>. Make a backup of this file. Then open this file for editing.</p>
+
+<p>In the file you'll see 7 variables:</p>
+
+<ul>
+<li>$documentation_folder = "docs"; </li>
+<li>$documentation_title = "DocMade example"; </li>
+<li>$theme = 'theme_light'; </li>
+<li>$markup_theme = 'markup_light'; </li>
+<li>$topbar_logo = "ressources/main_logo.png"; </li>
+<li>$small_logo = "ressources/small_logo.png"; </li>
+<li>$footer_html = "some HTML";</li>
+<li>$editable = true;</li>
+</ul>
+
+<p><strong>$documentation_folder</strong> sets the name of the subdirectory where the markdown files are saved. You don't need to change this, if you save the markdown files in the existing "docs" folder.</p>
+
+<p><strong>$documentation_title</strong> is the name or the title of your documentation.</p>
+
+<p><strong>$theme</strong> is the name of the used theme, located in the themes folder. You can make your own theme or use an existing one. Be sure, that the theme really exists. Use the name of the CSS-file but without the '.css'.</p>
+
+<p><strong>$markup_theme</strong> is the same like the theme variable but for the markdown section. If you want to change the style of the html output of you markdown files, create your own CSS file or edit the existing one.</p>
+
+<p><strong>$topbar_logo</strong> is the logo which appears in the header.</p>
+
+<p><strong>$small_logo</strong> is the small logo which appears on mobile devices.</p>
+
+<p><strong>$footer_html</strong> is the custom HTML output, which you might want to place in the footer like imprints.</p>
+
+<p><strong>$editable = true;</strong> indicates if the files can be edited using the integrated markdown editor</p>
+
+<h3>
+<a id="how-to-write-the-documentation" class="anchor" href="#how-to-write-the-documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to write the documentation</h3>
+
+<p>If you look in the <code>docs</code> folder you'll see some <code>.md</code> files and some directories. DocuMate will use folders as headlines and place all the files below.</p>
+
+<p>If you want to add a new page to your docu, simply add a file with <code>.md</code> file extension.</p>
+
+<p>Order files while using number prefixes. Use Following syntax:</p>
+
+<pre lang="TXT"><code>[Number]_[Name of the file].md
+01_This is a file.md
+</code></pre>
+
+<p>DocuMate will order the files and directories. Also it will remove all letters and numbers before the first <code>_</code> when displaying it.</p>
 
 <h2>
-<a id="what-are-the-features" class="anchor" href="#what-are-the-features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What are the features?</h2>
+<a id="make-your-own-themes" class="anchor" href="#make-your-own-themes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Make your own Themes</h2>
 
-<p>You can add, edit and remove files and folders. Files stored in folders are grouped fo a better overwiew.</p>
+<h3>
+<a id="basic-theme-of-your-documate" class="anchor" href="#basic-theme-of-your-documate" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Basic theme of your DocuMate</h3>
 
-<p>With the markdown-abilities you can format your texts, tables and images.</p>
+<p>Adding own themes is quite simple if you know CSS. Simply insert a new or copy one existing CSS file. If you copy an existing file, you'll get all classes you can edit.</p>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/VanDerLars/DocuMate">DocuMate - Docimentation made easy</a> is maintained by <a href="https://github.com/VanDerLars">VanDerLars</a>.</span>
+<p>After this, you have to change the <code>$theme</code> variable in the <code>config.php</code>. Use the name of your new theme file without the <code>.css</code></p>
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
+<h3>
+<a id="markup-theme" class="anchor" href="#markup-theme" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Markup theme</h3>
 
-    </section>
+<p>You can also change the design of the markdown content. Copy the file <code>markup_light.css</code> in the themes folder and change the CSS properties inside. Be sure, that you don't manipulate the classnames! After this, add the name of your new markdown file to <code>config.php</code>.</p>
+
+<h2>
+<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Todo:</h2>
+
+<h2>
+<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits:</h2>
+
+<p>For the markdown translation I use the awesome php library of Michelf: <a href="https://michelf.ca/projects/php-markdown/">https://michelf.ca/projects/php-markdown/</a>
+The editor is made by this awesome guy: <a href="https://github.com/jbt/markdown-editor">https://github.com/jbt/markdown-editor</a></p>
+
+<h2>
+<a id="thanks-for-using" class="anchor" href="#thanks-for-using" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Thanks for using!</h2>
+
+<p>Don't hesitate to send me some lines: <a href="mailto:lars@lehmann.link">lars@lehmann.link</a></p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/VanDerLars/DocuMate/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/VanDerLars/DocuMate/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/VanDerLars/DocuMate"></a> is maintained by <a href="https://github.com/VanDerLars">VanDerLars</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
 
   
   </body>
