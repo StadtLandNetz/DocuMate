@@ -20,7 +20,7 @@ You can upload your own logo files, **develop own themes** and change some behav
 * Easy to install
 * No external sources or repositories
 
-![BILD](http://doku.s-via.de/ressources/dokumate%20screen.png)
+![your-image-description](http://localhost:8888/DocuMate/uploads/Abbildung%205.png "test")
 
 ## Installation
 

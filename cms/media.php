@@ -31,7 +31,7 @@ if ($handle = opendir($path)) {
     while (false !== ($entry = readdir($handle))) {
         
         if ($entry != "." && $entry != "..") {
-            echo '<li><a href="../uploads/' . $entry . '" target="_blank">' . $entry . ' ↗</br><img src="../uploads/' . $entry . '" style="width: 150px;"></a><br><pre>![your-image-description](' . $_SERVER['HTTP_HOST'] . '/uploads/' . $entry . ']</pre></li>';
+            echo '<li><a href="../uploads/' . $entry . '" target="_blank">' . $entry . ' ↗</br><img src="../uploads/' . $entry . '" style="width: 150px;"></a><br><pre>![your-image-description](http://' . $_SERVER['HTTP_HOST'] . '/uploads/' . $entry . ' "your tooltip text")</pre></li>';
         }
     }
     closedir($handle);
