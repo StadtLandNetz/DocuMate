@@ -19,7 +19,7 @@ $markup_theme = 'markup_dark';
 
 //the path to your logo file, which will be placed in the header
 //The size of this image is 60x240 px
-$topbar_logo = "ressources/main_logo.png"; 
+$topbar_logo = "ressources/main_logo_dark.png"; 
 
 //the path to your small logo file, which will be placed in the header when you view the page on smartphones
 //The size of this image is 40x40 px
