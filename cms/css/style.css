@@ -1,0 +1,513 @@
+/*
+File: style.css
+Author: Lars Lehmann
+Desc: All the basic format options.
+      Can be overwritten by a theme css. 
+      Look in the themes folder and change the PHP variable in config.php.
+*/
+
+
+
+body{
+    margin: 0;
+    display: block;     
+}
+
+h1, h2, h3, h4, h5, p, a{
+    padding: 0;
+    margin: 0;
+}
+
+p a:hover {
+    text-decoration: underline !important;
+}
+
+.wrapper {
+    padding: 50px;
+    padding: 0;
+}
+.featherlight:last-of-type {
+    background: rgba(156, 156, 156, 0.8) !important;
+}
+.wrapper.dialog {
+    max-width: 800px;
+    border-radius: 5px;
+    margin: 0px auto;
+    padding: 50px;
+    padding-bottom: 100px;
+    background: #fff;
+}
+
+.mobile_menu{
+    display: none;
+}
+
+/* ------------ TOPBAR -----------*/
+.topbar{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    z-index: 2;
+}
+
+ .topbar div,  .topbar h1{
+    float: left;
+    margin: 0;
+}
+
+.topbar h1{
+}
+
+.main_logo{ 
+    height: 60px;
+    width: 250px;
+    margin-left: 10px !important;
+    margin-right: 50px !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.small_logo{ 
+    height: 40px;
+    width: 40px;
+    margin-left: 10px !important;
+    margin-right: 20px !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    margin-top: 10px !important;
+    display: none;
+}
+
+/* ------------ INNER -----------*/
+.inner{
+    width: 100%;
+    height: 100%;
+    padding-top: 60px;
+}
+
+/* ------------ LEFTBAR -----------*/
+.leftbar{
+    height: calc(100% - 150px);
+    width: 299px;
+    padding: 20px;
+    position: fixed;
+    margin-top: 60px;
+    z-index: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.menu .menuitem {
+    font-weight: 100;
+}
+
+.menu {
+    margin-left: 7px;
+    margin-top: 5px;
+    font-weight: 600;
+}
+.menu .menu .menu {
+    font-size: 12px;
+}
+
+.menuitem {
+    margin-left: 5px;
+    font-weight: 600;
+    padding: 3px;
+    cursor: pointer;
+}
+.menuitem:hover {
+}
+.menuitem::before{
+   /* Content: "⚊ ";*/
+}
+ .selected {
+    padding-left: 0px;
+}
+
+a {
+    text-decoration: none !important;
+}
+.menu a {
+    text-decoration: none !important;
+}
+
+
+/*
+.menu-inner .menu-outer{
+    display: none;
+}
+.menu-outer:nth-child(1)::before {
+    content: "▷";
+}
+
+.menu-inner .menu-outer.open {
+    display: inherit;
+}
+.menu-inner::before {
+    content: "▼";
+}*/
+
+/* ------------ RIGHTBAR -----------*/
+.rightbar{
+    height: calc(100% - 150px);
+    width: calc(100% - 380px);
+    position: fixed;
+    left: 340px;
+    top: 60px;
+    z-index: 1;
+    padding: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+/* ------------ FOOTER -----------*/
+.footer {
+    width: 100%;
+    height: 20px;
+    position: fixed;
+    top: calc(100% - 50px);
+    padding: 15px;
+    z-index: 3;
+}
+
+
+
+
+/* ------------ SEARCH -----------*/
+.searchbox{
+    padding: 5px;    
+    width: calc(100% - 85px);
+}
+
+
+.search_result {
+    margin: -7px -20px;
+    padding: 20px;
+}
+
+.search_result:hover {
+}
+
+/* ----------------------------------- */
+/* ----- Styles smaller Displays ----- */
+@media screen and (max-width: 1025px) {
+    .rightbar {
+        width: calc(100% - 380px) !important;
+        overflow-y: auto !important;
+        overflow-x: auto !important;
+    }   
+    
+}
+@media screen and (max-width: 769px) {
+    .leftbar{
+        width: 199px !important;
+    }
+    .rightbar {
+        width: calc(100% - 280px) !important;
+        left: 240px;
+    } 
+    .title_text{
+        font-size: 16px;
+    }
+}
+
+
+
+@media screen and (max-width: 450px) {
+
+    .main_logo{ 
+        display: none;
+    }
+    .small_logo{ 
+        display: block;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    
+    .leftbar{
+        left: -240px;
+        transition: all 0.3s ease;
+    }
+    .rightbar {
+        left: 0;
+        width: 100% !important;
+        transition: all 0.3s ease;
+    }
+    
+    .leftbar.open{
+        left: 0px;
+    }
+    .rightbar.open{
+        left: 240px;
+        width: calc(100% - 240px) !important;
+    }
+    
+    
+    .mobile_menu{
+        display: block;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #fff;
+        z-index: 4;
+        float: left;
+        margin-top: 8px !important;
+        margin-left: 8px !important;
+        border-radius: 5px;
+    }
+    .mobile_menu:hover{
+        background: #F9F9F9;
+        border: 1px solid #DAE0E7;
+    }
+    .mobile_menu:active, .mobile_menu:focus{
+        background: #F9F9F9;
+        border: 1px solid #DAE0E7;
+        box-shadow: 0 0 5px #DADADA inset;
+    }
+    
+    
+    .hamburger-box {    
+        position: relative;
+        width: 30px;
+        height: 25px;
+        margin: 5px !important;
+    }
+    .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+        position: absolute;
+        width: 30px;
+        height: 4px;
+        border-radius: 4px;
+        background-color: #616161;
+    }
+    .hamburger-inner {
+        top: 50%;
+        display: block;
+        margin-top: -2px;
+    }
+
+
+    .hamburger-inner:before {
+        top: -10px;
+    }
+
+    .hamburger-inner:after {
+        bottom: -10px;
+    }
+    .hamburger-inner:after, .hamburger-inner:before {
+        display: block;
+        content: '';
+    }
+    
+    .title_text, .path_selectbox{
+        display: none;
+    }
+    
+}
+
+/* ------ Edit-Controls ------ */
+a.edit_mnu_btn {
+    padding: 0 3px;
+    border-radius: 0px;
+    margin-left: 10px;
+    float: right;
+    transition: all 0.3s ease;
+    font-size: 17px;
+    margin: 1px 1px;
+    min-width: 15px;
+    text-align: center;
+	
+}
+
+a.edit_mnu_btn.btn_edit{
+    position: absolute;
+    left: calc(100% - 60px);
+}
+
+a.edit_mnu_btn.btn_delete{
+    position: absolute;
+    left: calc(100% - 40px);
+}
+
+
+
+
+.edit_btn {
+    display: block;
+    padding: 9px;
+    border: 0px solid #ffffff;
+    margin: 11px !important;
+    border-radius: 4px;
+    margin-left: 20px !important;
+    margin-left: 0px !important;
+    color: #616161;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    outline: none;
+    background: #f7f7f7;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+
+.btn_search{    
+    margin-left: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border: 1px solid #DAE0E7;
+    color: #616161;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    outline: none;
+    
+    background: #f7f7f7;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.06);
+}
+
+.edit_btn:active, .btn_search:active {
+    box-shadow: 0 0 5px #e0e0e0 inset;
+    background: #efefef ;
+}
+
+
+.btn, .submit_btn, .cancel_btn {
+    border: 0px solid #FFFFFF;
+    color: #FFFFFF;
+    padding: 10px;
+    background: #49af84;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    float: left;
+    font-family: arial;
+    font-size: 14px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.btn{
+    margin: 10px;
+    transition: box-shadow 0.3s ease;
+}
+
+.btn:active ,.submit_btn:active, .cancel_btn:active {
+    border-color: #6db3fd;
+    box-shadow: 0 0 5px #7d7d7d inset;
+}
+
+.submit_btn {
+    position: absolute;
+    top: 5px;
+    right: 30px;
+}
+.cancel_btn {
+    position: absolute;
+    top: 5px;
+    right: 110px;
+    background: #f16161;
+}
+
+.media_btn, .upload_btn{
+    position: absolute;
+    top: 5px;
+    right: 220px;
+	margin: 0px !important;
+    font-family: arial !important;
+    font-size: 14px !important;
+	
+    padding: 10px;
+    border-radius: 4px;
+    margin-left: 20px !important;
+    margin-left: 0px !important;
+    color: #616161;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    outline: none;
+    background: #f7f7f7;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+}
+.upload_btn{
+    right: 290px;
+}
+
+
+
+
+input.add_path_selectbox, .path_selectbox {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fcfcfc), color-stop(100%, #f2f2f2)) !important;
+    background-image: linear-gradient(to bottom, #fcfcfc 0, #f2f2f2 100%) !important;
+    background-image: -webkit-linear-gradient(top, #fcfcfc 0, #f2f2f2 100%) !important;
+    box-shadow: 0px 1px 0px rgba(152, 150, 152, 0.15);
+	font-size: 14px !important;
+    background: #fff;
+}
+
+input.searchbox, .add_path_textbox, .path_textbox {
+    box-shadow: 0px 1px 0px rgba(152, 150, 152, 0.15);
+	transition: all 0.3s ease;
+	padding-left: 3px;
+    margin-right: -5px;
+	font-size: 14px !important;
+    background: #fff;
+}
+
+input.searchbox:focus, .add_path_selectbox:focus, .add_path_textbox:focus, .path_textbox:focus, .path_selectbox:focus {
+    border-color: #6db3fd;
+    box-shadow: 3px 3px 0 #6db3fd, -3px -3px 0 #6db3fd, -3px 3px 0 #6db3fd, 3px -3px 0 #6db3fd;
+    outline: none;
+}
+
+
+/* ---------- Media ---------- */
+.uploadMessage.error {
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(141deg, rgba(232, 44, 44, 0.67) 0%, rgba(255, 23, 23, 0.42) 51%, rgba(255, 0, 0, 0.14) 75%);
+}
+.uploadMessage.success {
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(141deg, rgba(32, 173, 173, 0.75) 0%, rgba(11, 195, 178, 0.56) 51%, rgba(46, 159, 177, 0.43) 75%);
+}
+.uploadMessage {
+    width: 90%;
+    margin: 25px 0;
+    padding: 25px;
+    color: #fff;
+    border-radius: 4px;
+	font-size: 18px;
+}
+
+
+/* ---------- Lightboxes ---------- */
+
+.featherlight-iframe .featherlight-content {
+    border-bottom: 0;
+    padding: 0;
+    width: 80%;
+    height: 80%;
+    max-width: 800px;
+    
+}
+.featherlight-content {
+	border: 5px solid #dcdcdc;
+}
+.featherlight .featherlight-inner {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+

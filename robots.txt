@@ -1,0 +1,9 @@
+# URL:http://documate.lehmann.link/
+
+# Alle Roboter spidern die Domain
+User-agent: *
+Disallow:
+
+# Verzeichnis /cms soll nicht von * gespidert werden 
+User-agent: *
+Disallow: /cms

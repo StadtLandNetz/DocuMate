@@ -1,7 +1,7 @@
 <?php
 #   File: config.php
 #   Author: Lars Lehmann
-#   Desc: Here xou can find all the basic options for your documentation
+#   Desc: Here you can find all the basic options for your documentation
 #         Please make a backup before editing this file.
 #         You have to set all the variables to a value. Don't delete one or leave them empty.
 
@@ -12,10 +12,10 @@ $documentation_folder = "docs";
 $documentation_title = "DocuMate - documentation made easy"; 
 
 //the name of the theme/style you want for the entire app. Check the themes folder. Enter here filename without '.css'. You can create new styles by copying an old one.
-$theme = 'theme_light'; 
+$theme = 'theme_dark';
 
 //the name of the theme/style you want for the markup. Check the themes folder. Enter here filename without '.css'. You can create new styles by copying an old one.
-$markup_theme = 'markup_light'; 
+$markup_theme = 'markup_dark'; 
 
 //the path to your logo file, which will be placed in the header
 //The size of this image is 60x240 px
@@ -32,6 +32,9 @@ $footer_html = "<p>Here you can insert some <b>own</b> HTML like <a href=\"http:
 $start_page = "01_Home";
 
 //Indicates if the files can be edited using the integrated markup editor
-$editable = true;
+$can_login = true;
+
+//To enter the editmode, type the password
+$admin_password = 'lars11';
 
 ?>

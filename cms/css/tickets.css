@@ -1,0 +1,75 @@
+.mode_switcher{
+    margin: 0 auto!important;
+    width: 260px;
+    float: none !important;
+}
+.mode_switcher .edit_btn{
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 16px;
+}
+.mode_switcher .edit_btn.left{
+    border-radius: 2px 0 0 2px;
+    margin-right: 0px !important;
+}
+.mode_switcher .edit_btn.right{
+    border-radius: 0 2px 2px 0;
+}
+
+.edit_btn.selected{
+    background: #094c80;
+    box-shadow: 0px 1px 1px rgb(9, 76, 128) inset;
+    color: #efefef;
+}
+.edit_btn.selected:hover{
+    background: #094c80;
+    box-shadow: 0px 1px 1px rgb(9, 76, 128) inset;
+    color: #efefef;
+}
+
+
+
+
+
+@media screen and (max-width: 1280px) {
+    .mode_switcher{
+        float: left !important;
+        margin-left: 50px !important;
+    }
+}
+@media screen and (max-width: 890px) {
+    .title_text{
+        display: none;
+    }
+}
+@media screen and (max-width: 690px) {
+    .main_logo{
+        margin-right: 0px !important;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .mode_switcher{
+        margin-left: 0px !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main_logo{
+        display: none !important;
+    }
+    .small_logo{
+        display: block !important;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .edit_btn{
+        font-size: 14px !important;
+        font-weight: 100 !important;
+        line-height: 20px;
+    }
+    .mode_switcher{
+        width: 210px !important;
+    }
+}

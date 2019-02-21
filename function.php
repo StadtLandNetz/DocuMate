@@ -1,45 +1,94 @@
 <?php
 
+// ---------------------------------
+// --- UNTERSTÜTZENDE FUNKTIONEN ---
+// ---------------------------------
+function getDomain() {
+    return $_SERVER['SERVER_NAME'];
+}
 
 
 
 
-function listFolderFiles($directory){
+// -----------------------
+// --- DOKU FUNKTIONEN ---
+// -----------------------
+
+function getfolder($directory){
+    
+    $ffs = scandir($directory);
+    $return = '';
+    
+    foreach($ffs as $ff){
+        
+        
+        if($ff != '.' && $ff != '..'){
+            if(is_dir($directory . '/' . $ff)) {
+                
+                    //Pfad ist ein Verzeichnis
+                    $return .= '<option>' . $directory . '/' . $ff . '/</option>' ;
+                
+                    $return .= getfolder($directory . '/' . $ff);
+            }
+        }
+    }
+    return $return;
+}
+
+
+function listFolderFiles($directory, $editable){
     $C = 0;
     
     $ffs = scandir($directory);
-    echo '<div class="menu">';
+    echo '<div class="menu menu-inner">';
     foreach($ffs as $ff){
         $C = $C + 1;
         if($ff != '.' && $ff != '..'){
 
             if(is_dir($directory.'/'.$ff)) {
-                echo '<div class="menu">' ;//.$ff;
+                //Pfad ist ein Verzeichnis
+                
                 $ff = str_replace (".md", "", $ff);
                 $pos = strrpos($ff, "_", 0);
-
+                $edit_bnt = '';
+                
+                
+                if ($editable == 'true') {
+                    $edit_bnt = '<a href="cms/delete.php?action=ask&del='.$directory.'/'.$ff . '" class="edit_mnu_btn btn_delete" data-featherlight="iframe"><i class="fa fa-trash-o fa-1"></i></a>';
+                    $edit_bnt .= '<a href="cms?site='.$directory.'/'.$ff . '" class="edit_mnu_btn btn_edit"><i class="fa fa-pencil fa-1"></i></a>';
+                }
+                
+                
+                echo $edit_bnt .'<div class="menu menu-outer">' ;//.$ff;
                 
                 if ($pos == 0) {
                     echo $ff ;
                 } else {
-                    $sn = split("_", $ff);   
+                    $sn = explode("_", $ff);   
                     echo $sn[1] ; 
                 }
                 
                 
-                listFolderFiles($directory.'/'.$ff);
+                listFolderFiles($directory.'/'.$ff, $editable);
                 echo '</div>';
             } else {
+                //Pfad ist eine Datei
             
-                $ff2 = str_replace (".md", "", $ff);
+                $ff1 = str_replace (".md", "", $ff);
+                $ff2 = str_replace (" ", "_", $ff1);
                 $pos = strrpos($ff, "_", 0);
-
+                $edit_bnt = '';
+                
+                if ($editable == 'true') {
+                    $edit_bnt = '<a href="cms/delete.php?action=ask&del='.$directory.'/'.$ff . '" class="edit_mnu_btn btn_delete" data-featherlight="iframe"><i class="fa fa-trash-o fa-1"></i></a>';
+                    $edit_bnt .= '<a href="cms?site='.$directory.'/'.$ff . '" class="edit_mnu_btn btn_edit"><i class="fa fa-pencil fa-1"></i></a>';
+                }
                 
                 if ($pos == 0) {
-                    echo '<a href="?site='.$directory.'/'.$ff.'&focus=mnu'. $C . $ff2 .'"><div id="mnu'. $C . $ff2 .'" class="menuitem">' .$ff2 . '</div></a>';
+                    echo $edit_bnt . '<a href="?site='.$directory.'/'.$ff.'&focus=mnu'. $C . $ff2 .'"> <div id="mnu'. $C . $ff2 .'" class="menuitem">' .$ff1 . '</div></a>';
                 } else {
-                    $sn = split("_", $ff2);   
-                    echo '<a href="?site='.$directory.'/'.$ff.'&focus=mnu'. $C . $ff2 .'"><div id="mnu'. $C . $ff2 .'" class="menuitem">'.$sn[1] . '</div></a>'; 
+                    $sn = explode("_", $ff1);   
+                    echo $edit_bnt . '<a href="?site='.$directory.'/'.$ff.'&focus=mnu'. $C . $ff2 .'"> <div id="mnu'. $C . $ff2 .'" class="menuitem">'.$sn[1] . '</div></a>'; 
                 }
             }
         }
@@ -68,6 +117,7 @@ function get_search_results($directory, $search){
                 if ( $strp <> false){
                     
                     $ff2 = str_replace (".md", "", $ff);
+                    $ff2 = str_replace (" ", "_", $ff2);
                     $pfad = str_replace("/", ' 〉', $directory) . ' 〉' . str_replace (".md", "", $ff);
                     $pos = strrpos($ff, "_", 0);
                     
@@ -91,39 +141,75 @@ function get_search_results($directory, $search){
     //echo '</div>';
 }
 
+// -------------------------
+// --- TICKET FUNKTIONEN ---
+// -------------------------
+
+// Login und CMS-Funktionen
+function getCustomerLogin($customer, $user, $password){
+    $path = "../tickets/" . $customer . "/userdata.txt";
+    
+    $contents = file_get_contents($path, true);
+    echo $contents;
+    $erg = false;
+    
+    $lines = file($path);
+    foreach($lines as $line_num => $line)
+    {
+        $args = explode("=", $line);
+        $userNum = 0;
+        
+        if ($args[0] == 'users'){
+            $users = explode(",", $args[1]);
+            foreach($users as $user_num => $user_){
+                
+                echo $user_ . " " . $user . " " . $user_num . " - ";
+                if ($user_ = $user){
+                    $userNum == $user_num; 
+                    echo 'yes';
+                } else{
+                    echo 'nope';
+                }
+            }
+        }
+        
+        if ($args[0] == 'passwords'){
+            $passw = explode(",", $args[1]);
+            if ($password == $passw[$userNum]){
+                $erg = true;
+            }
+        }
+        
+        
+        
+    }
+    
+    echo $erg;
+    
+    return $erg;
+}
+
+
+function createCustomer($name){
+    
+}
+function addCustomerUser($name, $password){
+    
+}
+
+
+function getTickets($customer){
+    
+}
+
+function getTicketContents($ticketID){
+    
+}
 
 
 
 
 
-
-function current_url() {  
-    $isHTTPS = ( isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == "on" );  
-    $isPort = ( isset($_SERVER["SERVER_PORT"]) && ((!$isHTTPS && $_SERVER["SERVER_PORT"] != "80")  
-                 || ($isHTTPS && $_SERVER["SERVER_PORT"] != "443")));  
-                   
-    $port = ( $isPort ) ? ( ':'.$_SERVER["SERVER_PORT"] ) : '';  
-  
-    //On some setups like nginx and php-fastcgi, REQUEST_URI include the query string  
-    if ( ($pos = strpos($_SERVER['REQUEST_URI'], '?')) === false )  
-    {  
-        // REQUEST_URI include the query string, it should be appended:  
-  
-        $isQuery = ( isset($_SERVER["QUERY_STRING"]) && $_SERVER["QUERY_STRING"] != '');  
-        $query = ( $isQuery ) ? ( '?'.$_SERVER["QUERY_STRING"] ) : '';  
-  
-        $url = ( $isHTTPS ? 'https://' : 'http://')  
-                    .$_SERVER["SERVER_NAME"].$port.$_SERVER["REQUEST_URI"].$query;  
-    }  
-    else  
-    {  
-        // the query string is already included in $_SERVER["REQUEST_URI"], no need to append it  
-        $url = ( $isHTTPS ? 'https://' : 'http://')  
-                    .$_SERVER["SERVER_NAME"].$port.$_SERVER["REQUEST_URI"];          
-    }  
-           
-    return $url;  
-}  
 
 
 

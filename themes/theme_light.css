@@ -12,7 +12,6 @@ a{
     color: #616161;
 }
 
-
 .wrapper{
 }
 
@@ -59,10 +58,17 @@ a{
 .menuitem::before{
    /* Content: "⚊ ";*/
 }
- .selected {
+
+ a.selected > div {
     background: #4C94E0;
     color: #fff;
-    font-weight: 600;
+}
+.selected:hover div {
+    background: #3683D4;
+    color: #fff;
+}
+.selected:active div.edit_btn {
+    color: #61616a !important;
 }
 
 /* ------------ RIGHTBAR -----------*/
@@ -89,20 +95,9 @@ a{
     color: #616161;
 }
 
-.btn_search{    
-    border-radius: 4px;
-    border: 1px solid #DAE0E7;
-    background: #F9F9F9;
-    color: #616161;
-}
-.btn_search:hover {
-    background: #EFEFEF;
-    border: 1px solid #BFC4CA;
-}
-.btn_search:active {
-    background: #fff;
-    
-}
+
+
+
 
 .search_result {
     background: #fff;
@@ -125,6 +120,33 @@ hr{
     margin-right: -20px;
 }
 
+
+/* ------ Edit-Controls ------ */
+a.edit_mnu_btn {
+    color: #D8D8D8;
+}
+
+.menu:hover .edit_mnu_btn{
+    color: #9A9A9A;
+}
+.menu:hover .edit_mnu_btn.btn_edit.selected, .menu:hover .btn_edit {
+    color: #95d49a;
+}
+.menu:hover .edit_mnu_btn.btn_delete.selected, .menu:hover .btn_delete  {
+    color: #ffa8ac;
+}
+
+
+
+.btn_add:hover {
+    background: #f1f1f1;
+    color: #2EC581 !important;
+}
+
+.btn_add {
+    width: 100%;
+    font-size: 34px !important;
+}
 
 
 

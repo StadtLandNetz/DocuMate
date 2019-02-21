@@ -21,6 +21,8 @@ body{
 .markup h2 {
     margin-top: 20px;
     margin-bottom: 15px;
+    border-top: 1px solid #eaeaea;
+    padding-top: 8px;
 }
 .markup h3 {
     margin-top: 15px;
@@ -120,5 +122,5 @@ body{
 
 
 .markup img {
-    width: 100%;
+    max-width: 100%;
 }
